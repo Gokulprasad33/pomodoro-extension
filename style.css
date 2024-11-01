@@ -1,0 +1,37 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.icon {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.gettingtime {
+    display: none; 
+    position: absolute;
+    top: 50px; 
+    left: 10px; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.gettingtime.showedit {
+    display: block; 
+}
+
+.countdown {
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+.startbutton, .storebutton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
