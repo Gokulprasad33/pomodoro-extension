@@ -1,21 +1,56 @@
-document.getElementById("icon").addEventListener("click",function(){
-    const gettingtime=document.getElementById("gettingtime")
+document.getElementById("editbtn").addEventListener("click", function() {
+    const gettingtime = document.getElementById("gettingtime");
     gettingtime.classList.toggle("showedit");
-})
+    editwindowval = gettingtime.classList.contains("showedit") ? 1 : 0;
+});
 
-document.getElementById("saveval").addEventListener("click",function(){
-    const minuteinput =document.querySelector(".minute")
-    const minute = parseInt(minuteinput.value)
+let editwindow = document.getElementById("gettingtime");
+let editwindowval = 0;
+let minute
+let time
+let countdowninterval
+document.getElementById("saveval").addEventListener("click", function() {
+    const breakinput = document.querySelector(".breaktime");
+    const minuteinput = document.querySelector(".minute");
+    const minute = parseInt(minuteinput.value);
+    const breakinp = parseInt(breakinput.value);
 
-    if(!isNaN(minute) && minute>0){
-        const countdowndisplay = document.getElementById("countdown")
-        countdowndisplay.textContent=formattime(minute *60)
-        minuteinput.value=""
+    if (!isNaN(minute) && minute > 0) {
+        const countdowndisplay = document.getElementById("countdown");
+        countdowndisplay.textContent = formattime(minute * 60);
+        minuteinput.value = "";
+        breakinput.value = "";
+        gettingtime.classList.remove("showedit");
+        editwindowval = 0;
+        time = minute*60
+    } else {
+        alert("Enter Time");
+    }
+});
+
+function formattime(seconds) {
+    const minute = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+    return (minute < 10 ? '0' + minute : minute) + ':' + (sec < 10 ? '0' + sec : sec);
+}
+document.getElementById("startbtn").addEventListener("click",function(){
+    if(time>0){
+        clearInterval(countdowninterval)
+        countdowninterval = setInterval(updatecount, 1000);
+
     }
 })
+function updatecount(){
+    const minute=Math.floor(time/60)
+    const second=time%60
 
-function formattime(second){
-    const minute=Math.floor(second/60)
-    const sec =second %60
-    return (minute < 10 ? '0' + minute : minute) + ':' + (sec < 10 ? '0' + sec : sec);
+    if(time<=0){
+        clearInterval(countdown)
+        document.getElementById("countdown").innerHTML="00:00"
+        document.getElementById("error").innerHTML="Timesup!!!"
+        return
+    }
+
+    document.getElementById("countdown").innerHTML=`${minute<=10 ? '0'+minute :minute}:${second<=0 ? '0'+second : second}`
+    time--;
 }

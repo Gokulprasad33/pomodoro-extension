@@ -8,16 +8,18 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Pomodoro Focus</h1>
     <div class="container">
+        <h1>Pomodoro Focus</h1>
         <div class="timer">
-            <div class="icon" id="icon">+</div>
             <div class="gettingtime" id="gettingtime">
                 <textarea class="minute" placeholder="Enter minutes"></textarea>
-                <button class="storebutton" id="saveval">Set</button>
+                <textarea class="breaktime" placeholder="Enter break time"></textarea>
+                <button class="storebutton" onclick="closewin()" id="saveval">Set</button>
             </div>
             <div class="countdown" id="countdown">00:00</div>
-            <button class="startbutton" id="startbtn">Start</button> 
+            <button class="startbutton" id="startbtn" onclick="countdown()">Start</button> 
+            <button class="editbutton" id="editbtn">Edit</button> 
+            <p id="error" style="color: red;"></p>
         </div>
         <div class="faces">
         </div>
