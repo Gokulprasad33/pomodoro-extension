@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro</title>
-    <link href="/style.css" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <title>Pomodoro focus</title>
+    <link href="/src/style.css" rel="stylesheet">
+    <script src="/src/script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="timer">
             <h1 class="mode" id="mode"></h1>
             <div class="gettingtime" id="gettingtime">
-                <textarea class="minute" placeholder="Enter minutes"></textarea>
-                <textarea class="breaktime" placeholder="Enter break time"></textarea>
+                <textarea class="minute" placeholder="Focus time"></textarea>
+                <textarea class="breaktime" placeholder="break time"></textarea>
                 <button class="storebutton" onclick="closewin()" id="saveval">Set</button>
             </div>
             <div class="countdown" id="countdown">20:00</div>

@@ -1,0 +1,18 @@
+{
+    "manifest_version":2,
+    "name":"Pomodoro focus",
+    "version":"1",
+    "description":"Minimalist pomodoro timer",
+    "browser_action":{
+        "default_popup":"/src/main.html"
+
+    },
+    "icons":{
+        "16":"/imgs/pomodoro_logo.png",
+        "48":"/imgs/pomodoro_logo.png",
+        "128":"/imgs/pomodoro_logo.png"
+    },
+    "permissions":[
+        "activeTab"
+    ]
+}

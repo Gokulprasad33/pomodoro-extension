@@ -9,7 +9,7 @@ let editwindowval = 0;
 let minute=20
 let time=minute*60
 let countdowninterval
-let breakinp=5
+let breakinp=5 
 let onbreak=false
 document.getElementById("saveval").addEventListener("click", function() {
     const breakinput = document.querySelector(".breaktime");
