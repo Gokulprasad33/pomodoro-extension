@@ -6,14 +6,16 @@ document.getElementById("editbtn").addEventListener("click", function() {
 
 let editwindow = document.getElementById("gettingtime");
 let editwindowval = 0;
-let minute
-let time
+let minute=20
+let time=minute*60
 let countdowninterval
+let breakinp=5
+let onbreak=false
 document.getElementById("saveval").addEventListener("click", function() {
     const breakinput = document.querySelector(".breaktime");
     const minuteinput = document.querySelector(".minute");
     const minute = parseInt(minuteinput.value);
-    const breakinp = parseInt(breakinput.value);
+    breakinp = parseInt(breakinput.value);
 
     if (!isNaN(minute) && minute > 0) {
         const countdowndisplay = document.getElementById("countdown");
@@ -31,7 +33,7 @@ document.getElementById("saveval").addEventListener("click", function() {
 function formattime(seconds) {
     const minute = Math.floor(seconds / 60);
     const sec = seconds % 60;
-    return (minute < 10 ? '0' + minute : minute) + ':' + (sec < 10 ? '0' + sec : sec);
+    return (minute <10 ? '0' + minute : minute) + ':' + (sec <10 ? '0' + sec : sec);
 }
 document.getElementById("startbtn").addEventListener("click",function(){
     if(time>0){
@@ -43,14 +45,30 @@ document.getElementById("startbtn").addEventListener("click",function(){
 function updatecount(){
     const minute=Math.floor(time/60)
     const second=time%60
-
+    document.getElementById("mode").innerHTML=onbreak ? "☕Break☕" :"🎯FOCUS🎯"
     if(time<=0){
         clearInterval(countdown)
-        document.getElementById("countdown").innerHTML="00:00"
-        document.getElementById("error").innerHTML="Timesup!!!"
-        return
+        if(onbreak){
+            document.getElementById("countdown").innerHTML="00:00"
+            document.getElementById("error").innerHTML="Break over!!!"
+            return
+        }else{
+            document.getElementById("countdown").innerHTML="00:00"
+            document.getElementById("error").innerHTML="Times up"
+            breaktime()
+            return
+        }
     }
 
-    document.getElementById("countdown").innerHTML=`${minute<=10 ? '0'+minute :minute}:${second<=0 ? '0'+second : second}`
-    time--;
+    document.getElementById("countdown").innerHTML=`${minute<10 ? '0'+minute :minute}:${second<=10 ? '0'+second : second}`
+    time--
+}
+
+function breaktime(){
+    onbreak=true
+    time=breakinp*60
+
+    document.getElementById("mode").innerHTML="☕BREAK☕"
+    document.getElementById("error").innerHTML=""
+    countdowninterval= setInterval(updatecount,1000)
 }

@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Pomodoro Focus</h1>
         <div class="timer">
+            <h1 class="mode" id="mode"></h1>
             <div class="gettingtime" id="gettingtime">
                 <textarea class="minute" placeholder="Enter minutes"></textarea>
                 <textarea class="breaktime" placeholder="Enter break time"></textarea>
                 <button class="storebutton" onclick="closewin()" id="saveval">Set</button>
             </div>
-            <div class="countdown" id="countdown">00:00</div>
+            <div class="countdown" id="countdown">20:00</div>
             <button class="startbutton" id="startbtn" onclick="countdown()">Start</button> 
             <button class="editbutton" id="editbtn">Edit</button> 
             <p id="error" style="color: red;"></p>
