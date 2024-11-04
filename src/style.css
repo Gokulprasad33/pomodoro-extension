@@ -77,3 +77,15 @@ textarea{
     display: block; 
     display: flex;
 }
+.resetbutton{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FF4545;
+    background-color:#FCF596;
+    padding: 10px;    
+}
