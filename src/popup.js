@@ -5,7 +5,7 @@ document.getElementById("editbtn").addEventListener("click", function() {
 });
 //Global variables
 let editwindowval = 0;
-let minute=20;
+let minute=25;
 let time=minute*60;
 let countdowninterval;
 let breakinp=5 ;
