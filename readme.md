@@ -3,7 +3,7 @@
 
 Pomodoro Focus is a simple and effective Pomodoro timer extension This method breaks work into intervals which are seperated by breaks 
 ---
-![image](https://github.com/user-attachments/assets/05efcd33-59c1-49f7-861a-f78864de00b1)
+![image](https://github.com/user-attachments/assets/e5122d8e-34f2-481f-be7b-fec60cdc944d)
 ---
 ⭐This method helps maintain concentration and prevents burnout⭐
 
